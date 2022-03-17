@@ -2,15 +2,16 @@ import 'dart:convert';
 
 import 'package:dart_countries/dart_countries.dart';
 import 'package:dart_countries/src/generated/generated.dart';
+import 'package:equatable/equatable.dart';
 
 /// Country regroup informations for displaying a list of countries
-class Country {
+class Country extends Equatable {
   final String isoCode;
 
   /// English name of the country
   String get name => countriesName[isoCode]!;
 
-  /// The naame as the native would spell it
+  /// The name as the native would spell it
   String get nativeName => countriesNativeName[isoCode]!;
   String get capital => countriesCapital[isoCode]!;
   String get continent => countriesContinent[isoCode]!;
@@ -54,4 +55,17 @@ class Country {
   String toString() {
     return 'Country(name: $name, nativeName: $nativeName, capital: $capital, continent: $continent, languages: $languages, currencyCode: $currencyCode, flag: $flag, isoCode: $isoCode)';
   }
+
+  @override
+  List<Object?> get props => [
+        name,
+        nativeName,
+        capital,
+        continent,
+        languages,
+        currencyCode,
+        flag,
+        dialCode,
+        displayDialCode,
+      ];
 }
