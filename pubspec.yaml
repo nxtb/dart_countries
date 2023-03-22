@@ -6,10 +6,9 @@ homepage: https://github.com/cedvdb/dart_countries
 environment:
   sdk: ">=2.17.0 <3.0.0"
 
-dependencies:
-  equatable: ^2.0.3
-
 dev_dependencies:
   xml: ^5.1.2
   test: any
   basic_utils: ^3.1.0
+dependencies:
+  equatable: ^2.0.5

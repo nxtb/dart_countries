@@ -6,12 +6,12 @@ import 'package:equatable/equatable.dart';
 
 /// Country regroup informations for displaying a list of countries
 class Country extends Equatable {
-  final String isoCode;
+  final IsoCode isoCode;
 
   /// English name of the country
   String get name => countriesName[isoCode]!;
 
-  /// The name as the native would spell it
+  /// The naame as the native would spell it
   String get nativeName => countriesNativeName[isoCode]!;
   String get capital => countriesCapital[isoCode]!;
   String get continent => countriesContinent[isoCode]!;
@@ -58,6 +58,7 @@ class Country extends Equatable {
 
   @override
   List<Object?> get props => [
+        isoCode,
         name,
         nativeName,
         capital,
@@ -65,7 +66,7 @@ class Country extends Equatable {
         languages,
         currencyCode,
         flag,
-        dialCode,
+        countryCode,
         displayDialCode,
       ];
 }
