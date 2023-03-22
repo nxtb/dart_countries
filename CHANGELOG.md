@@ -1,3 +1,16 @@
+## 3.0.3
+* Add toJson fromJson
+
+## 3.0.2 - 01/04/2022
+* added isocode conversion map from string to isocode
+
+## 3.0.1 - 01/04/2022
+* [Revert] int country code reverted to string
+
+## 3.0.0 - 01/04/2022
+* [Breaking] maps now use iso code enum
+* [Breaking] (reverted) countriesDialCode renamed to countriesCountryCode and the value is now an int
+
 ## 2.1.0 - 23/07/2021
  * [Breaking] Removed isoCode enum for now
 

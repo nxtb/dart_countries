@@ -21,11 +21,11 @@ class Country extends Equatable {
   /// emoji flag
   String get flag => countriesFlag[isoCode]!;
 
-  /// country dialing code to call them internationally
-  String get dialCode => countriesDialCode[isoCode]!;
+  /// country calling code to call them internationally
+  String get countryCode => countriesCountryCode[isoCode]!;
 
-  /// returns "+ [dialCode]"
-  String get displayDialCode => '+ $dialCode';
+  /// returns "+ [countryCode]"
+  String get displayDialCode => '+ $countryCode';
 
   const Country(this.isoCode);
 
@@ -38,12 +38,12 @@ class Country extends Equatable {
       'languages': languages,
       'currencyCode': currencyCode,
       'flag': flag,
-      'isoCode': isoCode,
+      'isoCode': isoCode.name,
     };
   }
 
   factory Country.fromMap(Map<String, dynamic> map) {
-    return Country(map['isoCode']);
+    return Country(IsoCode.values.byName(map['isoCode']));
   }
 
   String toJson() => json.encode(toMap());
